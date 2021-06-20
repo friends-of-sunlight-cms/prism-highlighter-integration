@@ -1,4 +1,5 @@
 {
+    "$schema": "../../../system/schema/extend.json",
     "name": "Prism.js Syntax Highlighter",
     "description": "Syntax highlighting for the Web (https://prismjs.com/)",
     "version": "1.0",
