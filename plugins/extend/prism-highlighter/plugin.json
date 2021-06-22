@@ -10,7 +10,7 @@
         "prism": "Resources/languages/"
     },
     "events.web": [
-        ["tpl.head", "$this::onHead"],
-        ["bbcode.init.proc", "$this::onBbCode"]
+        {"event": "tpl.head", "method": "onHead"},
+        {"event": "bbcode.init.proc", "method": "onBbCode"}
     ]
 }
