@@ -3,7 +3,9 @@
     "name": "Prism.js Syntax Highlighter",
     "description": "Syntax highlighting for the Web (https://prismjs.com/)",
     "version": "1.0",
-    "api": "^8.0",
+    "environment": {
+        "system": "^8.0"
+    },
     "url": "https://jdanek.eu/",
     "class": "PrismHighlighterPlugin",
     "langs": {
