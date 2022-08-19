@@ -8,7 +8,6 @@ Integration syntax highlighting for the Web (https://prismjs.com/)
 Requirements
 ************
 
-- PHP 5.3+
 - SunLight CMS 8
 
 Installation
