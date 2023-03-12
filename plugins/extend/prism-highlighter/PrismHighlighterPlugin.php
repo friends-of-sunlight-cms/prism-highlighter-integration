@@ -12,11 +12,6 @@ use Sunlight\Plugin\ExtendPlugin;
 use Sunlight\Util\Form;
 use Sunlight\WebState;
 
-/**
- * PrismHighlighter plugin
- *
- * @author Jirka Daněk <jdanek.eu>
- */
 class PrismHighlighterPlugin extends ExtendPlugin
 {
 
@@ -30,25 +25,8 @@ class PrismHighlighterPlugin extends ExtendPlugin
         Page::PLUGIN => 'plugin',
     ];
 
-    protected function getConfigDefaults(): array
-    {
-        return [
-            'mode_advanced' => false,
-            // stranky
-            'in_section' => false,
-            'in_category' => false,
-            'in_book' => false,
-            'in_group' => false,
-            'in_forum' => true,
-            'in_plugin' => false,
-            'in_module' => false,
 
-        ];
-    }
 
-    /**
-     * @param array $args
-     */
     public function onHead(array $args): void
     {
         global $_index, $_page;
@@ -84,7 +62,29 @@ class PrismHighlighterPlugin extends ExtendPlugin
         };
     }
 
-    public function getAction(string $name): PluginAction
+    /**
+     * ============================================================================
+     *  EXTEND CONFIGURATION
+     * ============================================================================
+     */
+
+    protected function getConfigDefaults(): array
+    {
+        return [
+            'mode_advanced' => false,
+            // stranky
+            'in_section' => false,
+            'in_category' => false,
+            'in_book' => false,
+            'in_group' => false,
+            'in_forum' => true,
+            'in_plugin' => false,
+            'in_module' => false,
+
+        ];
+    }
+
+    public function getAction(string $name): ?PluginAction
     {
         if ($name === 'config') {
             return new CustomConfig($this);
