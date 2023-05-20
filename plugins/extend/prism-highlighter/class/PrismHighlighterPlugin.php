@@ -42,12 +42,12 @@ class PrismHighlighterPlugin extends ExtendPlugin
 
             $mode = ($this->getConfig()->offsetGet('mode_advanced') ? 'advanced' : 'basic');
 
-            $args['css'][] = $this->getWebPath() . '/resources/styles/prism-' . $mode . '.css';
-            $args['js'][] = $this->getWebPath() . '/resources/prism-' . $mode . '.js';
+            $args['css'][] = $this->getWebPath() . '/public/styles/prism-' . $mode . '.css';
+            $args['js'][] = $this->getWebPath() . '/public/prism-' . $mode . '.js';
 
             // line-number plugin
-            $args['css'][] = $this->getWebPath() . '/resources/styles/prism-linenumber.css';
-            $args['js'][] = $this->getWebPath() . '/resources/prism-linenumber.js';
+            $args['css'][] = $this->getWebPath() . '/public/styles/prism-linenumber.css';
+            $args['js'][] = $this->getWebPath() . '/public/prism-linenumber.js';
 
         }
     }
