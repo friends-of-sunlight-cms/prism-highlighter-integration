@@ -2,7 +2,7 @@
     "$schema": "../../../system/schema/extend.json",
     "name": "Prism.js Syntax Highlighter",
     "description": "Syntax highlighting for the Web (https://prismjs.com/)",
-    "version": "0.9.1",
+    "version": "0.9.2",
     "environment": {
         "system": "^8.0"
     },
@@ -10,6 +10,19 @@
         {"name": "Friends of Sunlight CMS", "url": "https://github.com/friends-of-sunlight-cms/"}
     ],
     "class": "PrismHighlighterPlugin",
+    "config_defaults": {
+        "mode_advanced": false,
+        "in_section": false,
+        "in_category": false,
+        "in_book": false,
+        "in_group": false,
+        "in_forum": true,
+        "in_plugin": false,
+        "in_module": false
+    },
+    "actions": {
+        "config": "ConfigAction"
+    },
     "langs": {
         "prism": "lang"
     },
