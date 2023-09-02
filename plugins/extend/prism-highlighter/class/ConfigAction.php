@@ -2,7 +2,6 @@
 
 namespace SunlightExtend\PrismHighlighter;
 
-use Fosc\Feature\Plugin\Config\FieldGenerator;
 use Sunlight\Action\ActionResult;
 use Sunlight\Core;
 use Sunlight\Database\Database as DB;
@@ -10,7 +9,6 @@ use Sunlight\Plugin\Action\ConfigAction as BaseConfigAction;
 
 class ConfigAction extends BaseConfigAction
 {
-
     protected function execute(): ActionResult
     {
         // automatic increment cache (enforce reload css)
@@ -20,22 +18,8 @@ class ConfigAction extends BaseConfigAction
         return parent::execute();
     }
 
-    protected function getFields(): array
+    public function getConfigLabel(string $key): string
     {
-        $langPrefix = "%p:prism.config";
-
-        $gen = new FieldGenerator($this->plugin);
-        $gen->generateFields([
-            'mode_advanced',
-            'in_section',
-            'in_category',
-            'in_book',
-            'in_group',
-            'in_forum',
-            'in_plugin',
-            'in_module',
-        ], $langPrefix, '%checkbox');
-
-        return $gen->getFields();
+        return _lang('prism.config.' . $key);
     }
 }
