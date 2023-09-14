@@ -24,6 +24,5 @@ return function (array $args) {
         // line-number plugin
         $args['css'][] = $this->getAssetPath('public/styles/prism-linenumber.css');
         $args['js'][] = $this->getAssetPath('public/prism-linenumber.js');
-
     }
 };
