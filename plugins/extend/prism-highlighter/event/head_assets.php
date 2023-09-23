@@ -6,17 +6,20 @@ use Sunlight\WebState;
 return function (array $args) {
     global $_index, $_page;
 
+    $config = $this->getConfig();
+
     if (
         (
             $_index->type === WebState::PAGE
             && isset(Page::TYPES[$_page['type']])
-            && $this->getConfig()['in_' . Page::TYPES[$_page['type']]]
+            && isset($config['in_' . Page::TYPES[$_page['type']]])
+            && $config['in_' . Page::TYPES[$_page['type']]]
         )
-        || ($_index->type === WebState::PLUGIN && $this->getConfig()['in_plugin'])
-        || ($_index->type === WebState::MODULE && $this->getConfig()['in_module'])
+        || ($_index->type === WebState::PLUGIN && $config['in_plugin'])
+        || ($_index->type === WebState::MODULE && $config['in_module'])
     ) {
 
-        $mode = ($this->getConfig()['mode_advanced'] ? 'advanced' : 'basic');
+        $mode = ($config['mode_advanced'] ? 'advanced' : 'basic');
 
         $args['css'][] = $this->getAssetPath('public/styles/prism-' . $mode . '.css');
         $args['js'][] = $this->getAssetPath('public/prism-' . $mode . '.js');
